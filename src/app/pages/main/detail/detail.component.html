@@ -1,0 +1,25 @@
+<div class="mask" (click)="goBack()">
+  <div class="container" (click)="$event.stopPropagation()">
+    <div style="text-align: right;">
+      <button nz-button nzType="primary" nzSize="large" nzShape="circle" (click)="confirm()" style="margin-right: 10px;">
+        <i class="anticon anticon-check"></i>
+      </button>
+      <button nz-button nz-popconfirm nzPlacement="bottomRight" nzTitle="你真的要删除这条待办事项吗？" (nzOnConfirm)="delete()" nzType="danger"
+        nzSize="large" nzShape="circle">
+        <i class="anticon anticon-delete"></i>
+      </button>
+    </div>
+
+    <textarea rows="12" nz-input [(ngModel)]="inputValue"></textarea>
+
+    <nz-select nzShowSearch nzAllowClear nzPlaceHolder="选择字段类型" [(ngModel)]="selectedValue">
+      <nz-option nzLabel="string" nzValue="string"></nz-option>
+      <nz-option nzLabel="number" nzValue="number"></nz-option>
+      <nz-option nzLabel="boolean" nzValue="boolean"></nz-option>
+      <nz-option nzLabel="object" nzValue="object"></nz-option>
+      <nz-option nzLabel="Array" nzValue="Array"></nz-option>
+      <nz-option nzLabel="any" nzValue="any"></nz-option>
+      <nz-option nzLabel="function" nzValue="function"></nz-option>
+    </nz-select>
+  </div>
+</div>

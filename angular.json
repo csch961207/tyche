@@ -25,12 +25,26 @@
             "aot": false,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
+                "output": "/assets/"
+              }
             ],
             "styles": [
+              "node_modules/codemirror/lib/codemirror.css",
+              "node_modules/codemirror/addon/hint/show-hint.css",
+              "node_modules/codemirror/theme/eclipse.css",
+              "node_modules/codemirror/addon/fold/foldgutter.css",
+              "src/assets/editor.md/css/editormd.css",
+              "node_modules/ng-zorro-antd/ng-zorro-antd.min.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.js",
+              "src/assets/editor.md/editormd.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -124,6 +138,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "tyche"
 }

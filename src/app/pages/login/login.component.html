@@ -1,0 +1,38 @@
+<div class="full-screen page-content">
+  <div class="wrapper">
+    <div class="text-wrapper">
+      <h1 class="title-text">
+        账号登录
+      </h1>
+    </div>
+    <form nz-form [formGroup]="loginForm" class="login-form" (ngSubmit)="submitForm($event)">
+      <nz-form-item>
+        <nz-form-control nzErrorTip="请输入用户名!">
+          <nz-input-group nzPrefixIcon="user">
+            <input type="text" nz-input formControlName="userName" placeholder="用户名" />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control nzErrorTip="请输入你的密码!">
+          <nz-input-group nzPrefixIcon="lock">
+            <input type="password" nz-input formControlName="password" placeholder="密码" />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control>
+          <label nz-checkbox formControlName="remember">
+            <span>记住我</span>
+          </label>
+          <a class="login-form-forgot" class="login-form-forgot">忘记密码？</a>
+          <button nz-button class="login-form-button" [nzType]="'primary'" [disabled]="!loginForm.valid">确认</button>
+          或
+          <a>现在注册!</a>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+    <div class="copy-right">
+    </div>
+  </div>
+</div>

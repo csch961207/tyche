@@ -1,0 +1,42 @@
+<nz-layout class="right-control">
+  <nz-header class="header-wrapper">
+    <app-header></app-header>
+  </nz-header>
+  <nz-content class="list-wrapper">
+    <h2>Drag / drop the item</h2>
+    <div [sortablejs]="items">
+      <div *ngFor="let item of items" style="margin: 15px;padding: 15px;background-color: #ffffff;">{{ item }}</div>
+    </div>
+
+    <!-- <app-editor-md></app-editor-md> -->
+    <app-wang-editor></app-wang-editor>
+
+    <app-editor-md-json></app-editor-md-json>
+
+    <!-- <div style="margin-top: 100px;">
+      <app-json-codemirror></app-json-codemirror>
+    </div> -->
+
+    <!-- <div ace-editor
+    [(text)]="text"
+    [mode]="'sql'"
+    [theme]="'eclipse'"
+    [options]="options"
+    [readOnly]="false"
+    [autoUpdateContent]="true"
+    [durationBeforeCallback]="1000"
+    (textChanged)="onChange($event)"
+    style="min-height: 200px; width:100%; overflow: auto;"></div> -->
+
+
+  </nz-content>
+  <button nz-button nzType="primary" (click)="click()">编辑或创建</button>
+  <button nz-button nzType="primary" (click)="open()">打开</button>
+</nz-layout>
+
+<nz-drawer [nzClosable]="false" [nzVisible]="visible" [nzPlacement]="placement" nzTitle="Basic Drawer"
+  (nzOnClose)="close()">
+  <p>Some contents...</p>
+  <p>Some contents...</p>
+  <p>Some contents...</p>
+</nz-drawer>
